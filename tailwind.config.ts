@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        dashboardPrimary: '#6EE7B7', 
+        dashboardSecondary: '#A5F3FC',
+        dashboardHighlight: '#E0E7FF',
       },
     },
   },

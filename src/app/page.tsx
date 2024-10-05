@@ -1,11 +1,14 @@
 import Image from "next/image";
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; 
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
+
+  const router = useRouter();
 
   const validateForm = () => {
     let valid = true;
@@ -35,6 +38,7 @@ export default function Login() {
     if (validateForm()) {
       // Form is valid, proceed with form submission (e.g., API call)
       console.log("Form submitted with email:", email, "password:", password);
+      router.push("/dashboard")
     }
   };
 
