@@ -147,8 +147,6 @@ export default function DashboardPage() {
            <MeetingCard />
         </div>
       </main>
-
-      {/* Profile and Notifications (Top-right Corner) */}
       <div className="absolute top-4 right-8 flex items-center space-x-4">
         <div className="relative">
           <img src="https://www.shareicon.net/data/128x128/2016/05/24/770137_man_512x512.png" alt="User profile" className="rounded-full w-10 h-10" />

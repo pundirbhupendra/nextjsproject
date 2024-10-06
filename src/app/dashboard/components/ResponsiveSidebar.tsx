@@ -5,7 +5,6 @@ export default function ResponsiveSidebar() {
 
   return (
     <div className="flex h-screen">
-      {/* Sidebar */}
       <aside
         className={`fixed inset-y-0 left-0 transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
@@ -34,8 +33,6 @@ export default function ResponsiveSidebar() {
             </li>
           </ul>
         </nav>
-
-        {/* Profile Section */}
         <div className="mt-8">
           <div className="flex items-center space-x-4">
             <img
