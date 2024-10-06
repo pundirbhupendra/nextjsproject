@@ -32,7 +32,6 @@ const BarChart: React.FC = () => {
     ],
   };
 
-  // Correctly typed chart options
   const options: ChartOptions<'bar'> = {
     responsive: true,
     maintainAspectRatio: false,
@@ -59,7 +58,7 @@ const BarChart: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md bg-white rounded-xl shadow-lg p-6 space-y-4">
+    <div className="max-w-lg bg-white rounded-xl shadow-lg p-6 space-y-4">
       {/* Header */}
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-semibold">Regular Sell</h2>
@@ -69,7 +68,7 @@ const BarChart: React.FC = () => {
       </div>
 
       {/* Chart */}
-      <div className="h-60 w-1/2">
+      <div className="h-60">
         <Bar data={data} options={options} />
       </div>
     </div>

@@ -3,12 +3,13 @@
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
 import TotalEarningCard from "./components/topbarCard";
-import { LockClosedIcon, ChartBarIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline';
+import { LockClosedIcon, ChartBarIcon, CurrencyDollarIcon ,ShoppingCartIcon } from '@heroicons/react/24/outline';
 import Card from "./components/topCard";
 import UpgradeCard from "./components/UpgradeCard";
 import ResponsiveSidebar from "./components/ResponsiveSidebar";
 import MeetingCard from "./components/meeting_card";
 import BarChart from "./components/BarChart";
+
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -43,7 +44,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex">
-   <ResponsiveSidebar></ResponsiveSidebar>
+   <ResponsiveSidebar/>
       <main className="flex-1 p-8">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-800">Dashboard</h2>
@@ -75,32 +76,47 @@ export default function DashboardPage() {
         bgColor="bg-green-100"
       />
     </div>
-
-    {/* Right Side UpgradeCard */}
     <div className="flex justify-end">
       <UpgradeCard />
     </div>
   </div>
 </div>
 
-        {/* Regular Sell and More Analysis */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-          {/* Regular Sell with Bar Chart */}
-          <div className="col-span-2 bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Regular Sell</h3>
-            {/* Bar chart */}
-            <div className="min-h-screen flex items-center justify-center bg-gray-100">
+       
       <BarChart />
+    
+      <div className="lg:w-auto sm:w-1/3 bg-white rounded-xl shadow-md p-6">
+      <h2 className="text-lg text-black font-semibold">More Analysis</h2>
+      <p className="text-sm text-gray-500 mb-4">There are more to view</p>
+
+      {/* Analysis options */}
+      <div className="space-y-4">
+        {/* Store Sell Ratio */}
+        <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+          <div className="flex items-center space-x-4">
+            <ChartBarIcon className="h-6 w-6 text-gray-700" />
+            <span className="text-sm font-medium text-gray-700">Store Sell Ratio</span>
+          </div>
+          <span className="text-gray-500">&rarr;</span>
+        </div>
+
+        {/* Top item sold */}
+        <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+          <div className="flex items-center space-x-4">
+            <ShoppingCartIcon className="h-6 w-6 text-gray-700" />
+            <span className="text-sm font-medium text-gray-700">Top item sold</span>
+          </div>
+          <span className="text-gray-500">&rarr;</span>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="mt-6 text-sm text-gray-500">
+        <span>Analysis created by</span>
+        <span className="text-lime-400 font-semibold"> Zi </span>
+      </div>
     </div>
-            {/* <Bar data={data} options={options} /> */}
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold text-gray-800">More Analysis</h3>
-            <ul className="mt-4 space-y-4">
-              <li className="text-md font-medium text-gray-600">Store Sell Ratio</li>
-              <li className="text-md font-medium text-gray-600">Top Item Sold</li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Cards: Team Member, Upgrade to Pro, Daily Meeting */}
@@ -128,7 +144,7 @@ export default function DashboardPage() {
             </button>
           </div>
 
-          <MeetingCard />
+           <MeetingCard />
         </div>
       </main>
 
